@@ -47,8 +47,8 @@ body {
 
 
 .history-content img {
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%; 
+    height: auto; 
     border-radius: 15px;
     margin-top: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

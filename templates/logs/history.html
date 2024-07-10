@@ -1,0 +1,76 @@
+{% include 'base.html' %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/historia.css' %}" />
+{% endblock %}
+{% block title %}
+  <title>Historia - Escuela Secundaria Técnica 26 "Huamantla 450"</title>
+{% endblock %}
+{% block content %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-center mb-4 history-title">Escuela Secundaria Técnica 26 "Huamantla 450"</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 align-self-center">
+        <img id="historia-img" src="{% static 'img/historia1.png' %}" class="img-fluid rounded animate-img" alt="historia" />
+      </div>
+      <div class="col-lg-6">
+        <div class="history-content animate-text">
+          <p>En 1984, Huamantla necesitaba una escuela más de nivel medio con enfoque en tecnología. Después de varias conversaciones, la escuela fue autorizada y comenzó a funcionar en julio de ese año.</p>
+          <p>La escuela comenzó con 3 aulas, un laboratorio y un personal inicial de 7 profesores y 2 empleados administrativos. La primera inscripción fue de 113 estudiantes, divididos en dos grupos. A lo largo de los años, la escuela ha crecido y se ha desarrollado, ofreciendo ahora 6 talleres diferentes y una variedad de actividades extracurriculares.</p>
+          <p>Durante sus 40 años de funcionamiento, la escuela ha demostrado una educación de excelencia, proporcionando educación en áreas académicas y técnicas. Ha sido un pilar fundamental en la comunidad estudiantil y ha contribuido al desarrollo de la región.</p>
+          <p>El nombre de la escuela "Huamantla 450" se debe a que fue fundada en el año del 450 aniversario de la fundación de la ciudad de Huamantla. En la actualidad, la escuela sigue creciendo y mejorando gracias al liderazgo del director Martín Flores López y el subdirector Ángel Robles Beristaín.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <footer class="text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-2">
+          <h5 class="mb-3">Contacto</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fas fa-key me-2"></i> Clave: 29DST0026V
+            </li>
+            <li>
+              <i class="fas fa-phone-alt me-2"></i> Teléfono: +52 247 471 2927
+            </li>
+            <li>
+              <i class="fas fa-envelope me-2"></i> Correo electrónico: sec-tec26@hotmail.com
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt me-2"></i> Dirección: Prolongación Juarez Sur S/N Ignacio Zaragoza, Huamantla, Tlaxcala.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-2">
+          <h5 class="mb-3">Horario de atención</h5>
+          <ul class="list-unstyled">
+            <li>Lunes a Viernes: 7:00 AM - 2:00 PM</li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-2">
+          <h5 class="mb-3">Ubicación en el mapa</h5>
+          <div class="embed-responsive embed-responsive-16by9 mb-2">
+            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.707401577944!2d-97.92304342611872!3d19.29508644506076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cffb7eac43221d%3A0xce64a8deeb0c06d1!2sEscuela%20Secundaria%20T%C3%A9cnica%20Num.%2026%20Huamantla%20450!5e0!3m2!1sen!2sus!4v1719256267541!5m2!1sen!2sus" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="facebook-circle">
+    <div class="facebook-icon">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+  </div>
+
+  <script src="{% static 'js/face.js' %}"></script>
+  <script src=" {% static 'js/historia.js' %}"></script>
+{% endblock %}

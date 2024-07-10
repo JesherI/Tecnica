@@ -21,4 +21,6 @@ from advertisement import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage, name='home'),
+    path('Historia/', views.History, name='Historia'),
+    path('Nosotros/', views.Nosotros, name='Nosotros'),
 ]
