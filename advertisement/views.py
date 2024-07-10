@@ -8,3 +8,12 @@ def History(request):
 
 def Nosotros(request):
     return render(request, "logs/nosotros.html")
+
+def Acerca(request):
+    return render(request, "logs/Acerca.html")
+
+def Mision(request):
+    return render(request, "logs/mision.html")
+
+def Valores(request):
+    return render(request, "logs/valores.html")

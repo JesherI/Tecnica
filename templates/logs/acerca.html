@@ -1,50 +1,44 @@
 {% include 'base.html' %}
 {% load static %}
 {% block style %}
-  <link rel="stylesheet" href="{% static 'css/nosotros.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/acerca.css' %}" />
 {% endblock %}
 {% block content %}
-  <br /><br /><br /><br /><br /><br />
-  <div class="container mt-5 text-center">
-    <h2>Nuestra Institución</h2>
-    <div class="row justify-content-center mt-4">
-      <div class="col-6 col-md-3 mb-4">
-        <a href="{% url 'Historia' %}" class="icon-link">
-          <div class="icon-circle">
-            <i class="fas fa-book"></i>
-          </div>
-          <p>Historia</p>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <a href="{% url "Acerca" %}" class="icon-link">
-          <div class="icon-circle">
-            <i class="fas fa-users"></i>
-          </div>
-          <p>Quiénes Somos</p>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <a href="{% url "Mision" %}" class="icon-link">
-          <div class="icon-circle">
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <p>Misión y Visión</p>
-        </a>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <a href="{% url "Valores" %}" class="icon-link">
-          <div class="icon-circle">
-            <i class="fas fa-heart"></i>
-          </div>
-          <p>Valores</p>
-        </a>
+  <section id="nosotros" class="py-5 text-center">
+    <br /><br /> <br />
+    <div class="container">
+      <h2 class="mb-4">Nosotros</h2>
+      <p class="lead mb-4">Somos una escuela comprometida y dedicada con la excelencia académica y el desarrollo de nuestros estudiantes.</p>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-brain fa-5x mb-3"></i>
+          <h4>Forjando mentes brillantes y fortaleciendo la integridad académica.</h4>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-lightbulb fa-5x mb-3"></i>
+          <h4>Promover la innovación y la creatividad en el proceso educativo.</h4>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-users fa-5x mb-3"></i>
+          <h4>Impulsar la formación de ciudadanos éticos y comprometidos con la sociedad.</h4>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-shield-alt fa-5x mb-3"></i>
+          <h4>Garantizar un ambiente seguro y propicio para el aprendizaje.</h4>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-chalkboard-teacher fa-5x mb-3"></i>
+          <h4>Contando con más de 40 docentes preparados.</h4>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <i class="fas fa-laptop fa-5x mb-3"></i>
+          <h4>Contamos con más de 5 talleres tecnológicos.</h4>
+        </div>
       </div>
     </div>
-  </div>
-
-  <br /><br /><br /><br /><br /><br />
-
+    <br /><br /> <br />
+  </section>
   <footer class="text-center py-3">
     <div class="container">
       <div class="row">
