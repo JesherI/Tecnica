@@ -1,0 +1,107 @@
+body {
+    background: rgb(79, 28, 15);
+    background: linear-gradient(91deg, rgba(79, 28, 15, 1) 1%, rgba(118, 77, 65, 1) 21%, rgba(130, 92, 81, 1) 58%, rgba(79, 28, 15, 1) 100%);
+}
+
+#normativa h2 {
+    color: #f3dada;
+    text-shadow: 2px 2px 4px rgba(99, 16, 16, 0.5);
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+    opacity: 0; 
+    animation: fadeInUp 1s forwards; 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+#normativa .card {
+    background-color: #e2d4c8;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: slide-up 1s forwards 0.5s;
+    cursor: pointer;
+}
+
+#normativa .card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: #b98f7d;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease, background-color 0.3s ease;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#normativa .card:hover::before {
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-color: #b98f7d;
+}
+
+#normativa .card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+#normativa .card-title {
+    color: #361219;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+#normativa .card-text,
+#normativa .list-unstyled {
+    color: #330404;
+    transition: color 0.3s ease-in-out;
+}
+
+#normativa .btn-primary {
+    background-color: #361219;
+    border-color: #330404;
+    color: #c4b4a5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#normativa .btn-primary:hover {
+    background-color: #522c1f;
+    border-color: #691e07;
+    color: #fff4e8;
+}
+
+#normativa a {
+    color: #6b0404;
+}
+
+#normativa a:hover {
+    color: #382005;
+}

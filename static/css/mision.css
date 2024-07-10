@@ -1,0 +1,88 @@
+body {
+    background: rgb(79,28,15);
+    background: linear-gradient(91deg, rgba(79,28,15,1) 1%, rgba(118,77,65,1) 21%, rgba(130,92,81,1) 58%, rgba(79,28,15,1) 100%);
+}
+
+.section-title {
+    color: #cfd4d2ee;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: bold; 
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    gap: 40px; 
+    font-weight: normal; 
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #cfd4d2ee;
+    padding: 20px;
+    position: relative;
+    overflow: visible;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    flex: 1;
+    max-width: 500px;
+    min-height: 300px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    color: #cfd4d2ee;
+    font-size: 1.75rem;
+    margin-top: 40px;
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(99, 5, 5, 0.5);
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #cfd4d2ee;
+}
+
+.icon-box {
+    font-size: 50px;
+    color: #361219; 
+    transition: color 0.3s ease-in-out;
+    position: absolute;
+    top: -35px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card:hover .icon-box {
+    color: #cfd4d2ee; 
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title, 
+.card-container {
+    animation: slide-in 0.5s ease-out forwards;
+}

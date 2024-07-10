@@ -1,0 +1,144 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: rgb(79, 28, 15);
+    background: linear-gradient(91deg, rgba(79, 28, 15, 1) 1%, rgba(118, 77, 65, 1) 21%, rgba(130, 92, 81, 1) 58%, rgba(79, 28, 15, 1) 100%);
+}
+
+.card-title {
+    font-size: 1.2rem; 
+    margin-top: 30px; 
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(77, 9, 9, 0.5);
+}
+
+.card-text {
+    font-size: 0.9rem; 
+    margin-top: 20px;
+}
+
+.valores-title {
+    text-align: center;
+    color: #cfd4d2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.644);
+    margin-top: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.valores-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 30px;
+    padding: 0 20px;
+    margin-bottom: 30px; 
+}
+
+.valor-card {
+    background: rgba(116, 47, 47, 0.281);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(78, 10, 10, 0.2);
+    color: #cfd4d2;
+    padding: 20px; 
+    text-align: center;
+    width: 180px; 
+    min-height: 110px;
+    position: relative;
+    overflow: visible;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px; 
+}
+
+.valor-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(105, 32, 32, 0.3); 
+}
+
+.valor-card:hover .icon-container i {
+    color: #d3a9a9; 
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background: rgba(116, 47, 47, 0.459);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -20px auto 10px auto; 
+    position: absolute;
+    top: -10px; 
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.icon-container i {
+    font-size: 2rem; 
+    color: #361219;
+    position: relative;
+    z-index: 2;
+    margin-top: -10px; 
+}
+
+.like-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.like-button i {
+    font-size: 1.1rem;
+    color: #361219;
+    position: relative;
+    top: 20px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.like-button.active i {
+    color: #80052e;
+    transform: scale(1.2); 
+}
+
+
+@media (max-width: 768px) {
+    .valores-container {
+        padding: 0 10px; 
+    }
+
+    .valor-card {
+        width: 140px; 
+        min-height: 140px;
+    }
+
+    .icon-container {
+        width: 50px; 
+        height: 50px;
+    }
+
+    .icon-container i {
+        font-size: 1.5rem; 
+    }
+}
+
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.valores-title,
+.valores-container {
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+
