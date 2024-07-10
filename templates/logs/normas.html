@@ -1,0 +1,61 @@
+{% include 'base.html' %}
+{% load static %}
+{% block style %}
+  <link rel="stylesheet" href="/static/css/norma.css" />
+{% endblock %}
+{% block content %}
+  <div id="normativa" class="container my-5">
+    <h2 class="text-center mb-4">Normativa</h2>
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm">
+          <img src=" {% static 'img/000.png' %} " class="card-img-top" alt="Calendario Escolar" />
+          <div class="card-body text-center">
+            <h5 class="card-title">Calendario Escolar</h5>
+            <p class="card-text">Consulta el calendario escolar para conocer las fechas importantes del ciclo académico.</p>
+            <a href=" {% static 'pdf/Calendario.pdf' %} " class="btn btn-primary">Descargar PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Reglamento Escolar</h5>
+            <p class="card-text">Descarga el reglamento escolar para conocer las normas y directrices de la institución.</p>
+            <a href=" {% static 'pdf/Reglamento.pdf' %} " class="btn btn-primary">Descargar PDF</a>
+          </div>
+        </div>
+        <div class="card shadow-sm mt-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Inscripción</h5>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-file-alt"></i> Acta de nacimiento
+              </li>
+              <li>
+                <i class="fas fa-home"></i> Comprobante de domicilio
+              </li>
+              <li>
+                <i class="fas fa-id-card"></i> CURP
+              </li>
+              <li>
+                <i class="fas fa-graduation-cap"></i> Certificado de primaria
+              </li>
+              <li>
+                <i class="fas fa-notes-medical"></i> Análisis clínicos
+              </li>
+            </ul>
+            <p class="mt-3">
+              ¿Más información o tienes alguna pregunta? Visitanos o contáctanos en nuestro <a href="https://www.facebook.com/p/Oficial-T%C3%A9cnica-No-26-Zaragoza-Huamantla-Tlax-100063554410845/?locale=es_LA" target="_blank">Facebook</a>.
+              <img src=" {% static 'img/buho.gif' %} " alt="Buho" style="width: 70px; height: auto; position: absolute; bottom: -10px; left: 90%; transform: translateX(-50%);" />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+
+  <script src=" {% static 'js/face.js' %}"></script>
+{% endblock %}

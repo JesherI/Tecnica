@@ -20,11 +20,14 @@ from advertisement import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomePage, name='home'),
+    path('', views.HomePage, name='Home'),
     path('Historia/', views.History, name='Historia'),
     path('Nosotros/', views.Nosotros, name='Nosotros'),
     path('Acerca/', views.Acerca, name='Acerca'),
     path('Mision/', views.Mision, name='Mision'),
     path('Valores/', views.Valores, name='Valores'),
-    path('Taller/', views.Talleres, name='Taller'),    
+    path('Talleres/', views.Talleres, name='Talleres'),
+    path('Normas/', views.Normas, name='Normas'),
+    path('Eventos/', views.Eventos, name='Eventos'),
+    path('Login/', views.Login, name='Login'),
 ]

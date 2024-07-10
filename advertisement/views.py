@@ -19,4 +19,13 @@ def Valores(request):
     return render(request, "logs/valores.html")
 
 def Talleres(request):
-    return render(request, "logs/taller.html")
+    return render(request, "logs/talleres.html")
+
+def Normas(request):
+    return render(request, "logs/normas.html")
+
+def Eventos(request):
+    return render(request, "logs/eventos.html")
+
+def Login(request):
+    return render(request, "logs/login.html")
