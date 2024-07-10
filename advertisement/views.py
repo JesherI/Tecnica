@@ -17,3 +17,6 @@ def Mision(request):
 
 def Valores(request):
     return render(request, "logs/valores.html")
+
+def Talleres(request):
+    return render(request, "logs/taller.html")
