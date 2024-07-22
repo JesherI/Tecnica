@@ -1,4 +1,7 @@
-<form method="post" action="{% url 'Logout' %}">
+{% include "baseadmin.html" %}
+{% block content %}
+  <form method="post" action="{% url 'Logout' %}">
     {% csrf_token %}
     <button type="submit">Logout</button>
-</form>
+  </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Aplicación</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu-items">
+                <li><a href="{% url "Index" %}">Inicio</a></li>
+                <li><a href="{% url "Usuarios" %}">Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>

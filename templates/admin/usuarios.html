@@ -1,28 +1,31 @@
-<!-- templates/user_list.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Usuarios</title>
-</head>
-<body>
-    <h1>Lista de Usuarios</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre de Usuario</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.email }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% include "baseadmin.html" %}
+{% block content %}
+  <h1>Lista de Usuarios</h1>
+  <a href="{% url 'create_user' %}">Crear Nuevo Usuario</a>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre de Usuario</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <a href="{% url 'edit_user' user.id %}">Editar</a>
+            <form action="{% url 'delete_user' user.id %}" method="post" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit">Borrar</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -19,6 +19,9 @@ from django.urls import path, include
 from advertisement import views
 from django.contrib.auth import views as auth_views
 
+from django.conf.urls import handler404, handler403, handler500
+from advertisement.views import Error404View, Error403View, Error500View
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage, name='Home'),
@@ -34,5 +37,12 @@ urlpatterns = [
     path('accounts/login/', views.home, name='Inicio'),
     path('index/',views.home, name='Index'),
     path('logout/', auth_views.LogoutView.as_view(), name='Logout'),
-    path('usuarios/', views.usuarios, name="Usuarios")
+    path('usuarios/', views.usuarios, name="Usuarios"),
+    path('users/edit/<int:user_id>/', views.edit_user, name='edit_user'),
+    path('users/delete/<int:user_id>/', views.delete_user, name='delete_user'),
+    path('users/create/', views.create_user, name='create_user'),
 ]
+
+handler404 = Error404View.as_view()
+handler403 = Error403View.as_view()
+handler500 = Error500View.as_view()
