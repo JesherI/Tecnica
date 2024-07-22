@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from advertisement import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +30,8 @@ urlpatterns = [
     path('Talleres/', views.Talleres, name='Talleres'),
     path('Normas/', views.Normas, name='Normas'),
     path('Eventos/', views.Eventos, name='Eventos'),
-    path('Login/', views.Login, name='Login'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', views.home, name='Inicio'),
+    path('index/',views.home, name='Index'),
+    path('logout/', auth_views.LogoutView.as_view(), name='Logout'),
 ]

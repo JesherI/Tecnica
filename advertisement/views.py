@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http.response import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 def HomePage(request):
     return render(request, 'logs/index.html')
@@ -29,3 +31,7 @@ def Eventos(request):
 
 def Login(request):
     return render(request, "logs/login.html")
+
+@login_required
+def home(request):
+    return render(request, "admin/index.html")
