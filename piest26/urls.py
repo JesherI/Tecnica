@@ -34,4 +34,5 @@ urlpatterns = [
     path('accounts/login/', views.home, name='Inicio'),
     path('index/',views.home, name='Index'),
     path('logout/', auth_views.LogoutView.as_view(), name='Logout'),
+    path('usuarios/', views.usuarios, name="Usuarios")
 ]

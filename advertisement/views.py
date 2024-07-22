@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 def HomePage(request):
@@ -35,3 +36,8 @@ def Login(request):
 @login_required
 def home(request):
     return render(request, "admin/index.html")
+
+@login_required
+def usuarios(request):
+    users = User.objects.all()
+    return render(request, 'admin/usuarios.html', {'users': users})
