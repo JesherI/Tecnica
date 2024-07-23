@@ -1,3 +1,5 @@
+{% include "baseadmin.html" %}
+{% load static %}
 {% block content %}
 <h1>Eliminar Anuncio</h1>
     <p>¿Estás seguro de que quieres eliminar el anuncio "{{ anuncio.titulo }}"?</p>
@@ -6,5 +8,4 @@
         <button type="submit">Sí, eliminar</button>
     </form>
     <a href="{% url 'detalle_anuncio' anuncio.pk %}">Cancelar</a>
-
 {% endblock content %}
