@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b-9#!uislsektn@vr^fw22s6t1&2_nl#y3r(!5rn5eh(dy$ld)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = '/index/'
 LOGOUT_REDIRECT_URL = '/'
@@ -138,3 +138,10 @@ MESSAGE_TAGS = {
 HANDLER403 = 'advertisement.views.error_403'
 HANDLER404 = 'advertisement.views.error_404'
 HANDLER405 = 'advertisement.views.error_405'
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

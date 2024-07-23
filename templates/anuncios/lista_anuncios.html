@@ -1,0 +1,14 @@
+{% include "baseadmin.html" %}
+{% block content %}
+<h1>Lista de Anuncios</h1>
+<a href="{% url 'nuevo_anuncio' %}">Nuevo Anuncio</a>
+<ul>
+    {% for anuncio in anuncios %}
+        <li>
+            <a href="{% url 'detalle_anuncio' anuncio.pk %}">{{ anuncio.titulo }}</a>
+            <a href="{% url 'editar_anuncio' anuncio.pk %}">Editar</a>
+            <a href="{% url 'eliminar_anuncio' anuncio.pk %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

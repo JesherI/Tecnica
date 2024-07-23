@@ -22,6 +22,9 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls import handler404, handler403, handler500
 from advertisement.views import Error404View, Error403View, Error500View
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage, name='Home'),
@@ -41,7 +44,13 @@ urlpatterns = [
     path('users/edit/<int:user_id>/', views.edit_user, name='edit_user'),
     path('users/delete/<int:user_id>/', views.delete_user, name='delete_user'),
     path('users/create/', views.create_user, name='create_user'),
-]
+    path('anuncios/', views.lista_anuncios, name='lista_anuncios'),
+    path('<int:pk>/', views.detalle_anuncio, name='detalle_anuncio'),
+    path('nuevo/', views.nuevo_anuncio, name='nuevo_anuncio'),
+    path('<int:pk>/editar/', views.editar_anuncio, name='editar_anuncio'),
+    path('<int:pk>/eliminar/', views.eliminar_anuncio, name='eliminar_anuncio'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 handler404 = Error404View.as_view()
 handler403 = Error403View.as_view()

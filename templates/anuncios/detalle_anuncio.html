@@ -1,0 +1,6 @@
+{% include 'baseadmin.html' %}
+{% block content %}
+  <h1>{{ anuncio.titulo }}</h1>
+  <img src="{{ anuncio.imagen_url }}" alt="{{ anuncio.titulo }}" />
+  <a href="{% url 'lista_anuncios' %}">Volver a la lista</a>
+{% endblock %}

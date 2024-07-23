@@ -1,2 +1,11 @@
-{% include "base.html" %}
+{% include 'base.html' %}
 {% load static %}
+{% block content %}
+  <h1>Lista de Anuncios</h1>
+  <ul>
+    {% for anuncio in anuncios %}
+      <h1>{{ anuncio.titulo }}</h1>
+      <img src="{{ anuncio.imagen_url }}" alt="{{ anuncio.titulo }}" />
+    {% endfor %}
+  </ul>
+{% endblock %}

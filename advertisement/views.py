@@ -6,6 +6,9 @@ from django.http.response import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
+from .forms import AnuncioForm
+
+from .models import Anuncio
 
 def HomePage(request):
     return render(request, 'logs/index.html')
@@ -31,8 +34,9 @@ def Talleres(request):
 def Normas(request):
     return render(request, "logs/normas.html")
 
-def Eventos(request):
-    return render(request, "logs/eventos.html")
+def Eventos(request):  
+    anuncios = Anuncio.objects.all()
+    return render(request, 'logs/eventos.html', {'anuncios': anuncios})
 
 def Login(request):
     return render(request, "logs/login.html")
@@ -88,3 +92,44 @@ class Error404View(TemplateView):
 
 class Error500View(TemplateView):
     template_name = "error/405.html"
+
+@login_required
+def lista_anuncios(request):
+    anuncios = Anuncio.objects.all()
+    return render(request, 'anuncios/lista_anuncios.html', {'anuncios': anuncios})
+
+@login_required
+def detalle_anuncio(request, pk):
+    anuncio = get_object_or_404(Anuncio, pk=pk)
+    return render(request, 'anuncios/detalle_anuncio.html', {'anuncio': anuncio})
+
+@login_required
+def nuevo_anuncio(request):
+    if request.method == "POST":
+        form = AnuncioForm(request.POST, request.FILES)
+        if form.is_valid():
+            anuncio = form.save()
+            return redirect('detalle_anuncio', pk=anuncio.pk)
+    else:
+        form = AnuncioForm()
+    return render(request, 'anuncios/editar_anuncio.html', {'form': form})
+
+@login_required
+def editar_anuncio(request, pk):
+    anuncio = get_object_or_404(Anuncio, pk=pk)
+    if request.method == "POST":
+        form = AnuncioForm(request.POST, request.FILES, instance=anuncio)
+        if form.is_valid():
+            anuncio = form.save()
+            return redirect('detalle_anuncio', pk=anuncio.pk)
+    else:
+        form = AnuncioForm(instance=anuncio)
+    return render(request, 'anuncios/editar_anuncio.html', {'form': form})
+
+@login_required
+def eliminar_anuncio(request, pk):
+    anuncio = get_object_or_404(Anuncio, pk=pk)
+    if request.method == "POST":
+        anuncio.delete()
+        return redirect('lista_anuncios')
+    return render(request, 'anuncios/eliminar_anuncio.html', {'anuncio': anuncio})
